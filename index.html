@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F5F3FF;
+  --bg: #FAFAFF;
   --white: #FFFFFF;
   --ink: #18181B;
-  --ink-2: #52525B;
-  --ink-3: #A1A1AA;
-  --accent: #6D28D9;
+  --ink-2: #3F3F46;
+  --ink-3: #71717A;
+  --accent: #7C3AED;
   --accent-bg: #EDE9FE;
-  --accent-2: #E04E1A;
+  --accent-2: #DC2626;
   --navy: #1A2744;
-  --border: rgba(24,24,27,0.09);
-  --border-strong: rgba(24,24,27,0.18);
+  --border: rgba(124,58,237,0.12);
+  --border-strong: rgba(124,58,237,0.25);
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'DM Sans', 'Noto Sans SC', sans-serif;
   --mono: 'DM Mono', monospace;
@@ -42,8 +42,8 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { color: var(--ink-3); text-decoration: none; font-size: .82rem; font-weight: 400; letter-spacing: .05em; transition: color .2s; }
 .nav-links a:hover { color: var(--accent); }
-.nav-cta { background: var(--ink); color: var(--bg) !important; padding: .35rem 1rem; font-size: .8rem !important; font-weight: 500 !important; letter-spacing: .04em !important; transition: background .2s !important; }
-.nav-cta:hover { background: var(--accent) !important; color: white !important; }
+.nav-cta { background: var(--accent) !important; color: white !important; padding: .35rem 1rem; font-size: .8rem !important; font-weight: 600 !important; letter-spacing: .04em !important; transition: all .2s !important; border-radius: 6px; }
+.nav-cta:hover { background: #5B21B6 !important; }
 
 /* ── HERO ── */
 .hero {
@@ -54,6 +54,7 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   padding: 10rem 3rem 4rem;
   border-bottom: 1px solid var(--border);
   position: relative;
+  background: linear-gradient(135deg, #FAFAFF 0%, #EDE9FE 40%, #FAE8FF 70%, #FFF1F2 100%);
 }
 .hero-rule {
   position: absolute;
@@ -97,7 +98,10 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 }
 .hero-statement em {
   font-style: italic;
-  color: var(--accent);
+  background: linear-gradient(135deg, #7C3AED, #EC4899, #F97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-statement strong {
   font-weight: 700;
@@ -112,7 +116,7 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   
   
 }
-.hero-story strong { color: var(--ink); font-weight: 500; }
+.hero-story strong { color: var(--accent); font-weight: 600; }
 
 .hero-actions {
   display: flex;
@@ -122,17 +126,19 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   
 }
 .btn-primary {
-  background: var(--accent);
+  background: linear-gradient(135deg, #7C3AED, #A855F7);
   color: white;
   text-decoration: none;
-  padding: .75rem 1.8rem;
-  font-size: .84rem;
-  font-weight: 500;
-  letter-spacing: .03em;
-  transition: background .2s, transform .2s;
+  padding: .85rem 2rem;
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  transition: transform .2s, box-shadow .2s;
   display: inline-block;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.35);
 }
-.btn-primary:hover { background: #5B21B6; transform: translateY(-1px); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(124,58,237,0.45); }
 .btn-line {
   color: var(--ink-2);
   text-decoration: none;
@@ -159,6 +165,9 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 
 /* ── SECTIONS ── */
 .section { border-bottom: 1px solid var(--border); }
+#about { background: linear-gradient(160deg, #FFFFFF 0%, #F5F3FF 60%, #EDE9FE 100%); }
+#projects { background: linear-gradient(180deg, #FAFAFF 0%, #FAF5FF 50%, #FFF1F2 100%); }
+#contact { background: linear-gradient(135deg, #EDE9FE 0%, #FAE8FF 50%, #FFF7ED 100%); }
 .section-inner { max-width: 1080px; margin: 0 auto; padding: 5rem 3rem; }
 
 .section-header {
@@ -171,10 +180,14 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .section-num {
   font-family: var(--mono);
   font-size: .68rem;
-  color: var(--ink-3);
   letter-spacing: .12em;
   text-transform: uppercase;
   padding-top: .35rem;
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 .section-title {
   font-family: var(--serif);
@@ -182,6 +195,10 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -.01em;
+  background: linear-gradient(135deg, var(--ink) 60%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ── ABOUT ── */
@@ -207,7 +224,7 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   margin-bottom: 1.1rem;
 }
 .about-text p:last-child { margin-bottom: 0; }
-.about-text strong { color: var(--ink); font-weight: 500; }
+.about-text strong { color: var(--accent); font-weight: 600; }
 
 .about-sidebar { display: flex; flex-direction: column; gap: 2rem; }
 .sidebar-group { }
@@ -253,13 +270,23 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 4rem;
-  padding: 2.5rem 0;
+  padding: 2rem 1.5rem;
   border-top: 1px solid var(--border);
   cursor: pointer;
-  transition: background .15s;
+  transition: background .2s, box-shadow .2s;
+  border-radius: 12px;
+  margin-bottom: 4px;
 }
 .project:first-child { border-top: none; }
+.project:hover { background: rgba(124,58,237,0.05); box-shadow: 0 2px 20px rgba(124,58,237,0.08); }
 .project:hover .project-title { color: var(--accent); }
+
+.project-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .8rem;
+}
 
 .project-index {
   font-family: var(--mono);
@@ -271,10 +298,10 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .project-main { }
 .project-top {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: .8rem;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 .project-title {
   font-family: var(--serif);
@@ -308,7 +335,7 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   max-width: 640px;
   padding-left: .05rem;
 }
-.project-preview strong { color: var(--ink); font-weight: 500; }
+.project-preview strong { color: var(--accent); font-weight: 600; }
 .project-toggle-hint {
   font-size: .78rem;
   color: var(--ink-3);
@@ -361,10 +388,11 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .detail-block + .detail-block { margin-top: 1.6rem; }
 
 .insight {
-  background: var(--accent-bg);
-  border-left: 2px solid var(--accent);
+  background: linear-gradient(135deg, #EDE9FE 0%, #FAF5FF 100%);
+  border-left: 3px solid var(--accent);
   padding: .85rem 1rem;
   margin-top: .5rem;
+  border-radius: 0 8px 8px 0;
 }
 .insight p { color: var(--ink-2) !important; font-style: italic; font-size: .85rem !important; line-height: 1.8; }
 
@@ -372,7 +400,7 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .stat-item { }
 .stat-n {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--accent);
   line-height: 1;
@@ -384,12 +412,16 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
 .proj-link {
   font-family: var(--mono);
   font-size: .75rem;
-  color: var(--accent);
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: .4rem;
   transition: opacity .2s;
+  font-weight: 500;
 }
 .proj-link:hover { opacity: .7; }
 .proj-link::before { content: '↗'; }
@@ -465,15 +497,20 @@ nav.scrolled { background: rgba(245,243,255,.94); backdrop-filter: blur(12px); b
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  padding: .9rem 0;
+  padding: .9rem 1rem;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: var(--ink-2);
   font-size: .88rem;
-  transition: color .2s;
+  transition: all .2s;
+  border-radius: 8px;
 }
 .contact-item:first-child { border-top: 1px solid var(--border); }
-.contact-item:hover { color: var(--accent); }
+.contact-item:hover { 
+  color: var(--accent); 
+  background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(236,72,153,0.04));
+  padding-left: 1.4rem;
+}
 .contact-item-label {
   font-family: var(--mono);
   font-size: .62rem;
@@ -584,7 +621,7 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
       <div class="about-text reveal">
         <p>在暨南大学读国际商务研一，2027届毕业。喜欢钻研任何新东西——不管是新工具、新行业还是新的思维方式，变化对我来说是乐趣，不是压力。</p>
         <p>在共轨之家实习那段时间，我从零开始搭了一套完整的广告投放和数据追踪体系。GTM 配置、UTM 参数、SQL 留存分析——这些都不是谁教的，是因为有具体问题要解决，一个个搞清楚的。</p>
-        <p>我的专业背景不是计算机，但我用 Figma 画原型、Trae 生成 HTML、Coze 搭 Agent、Claude vibe-code 了这个网站。<strong>我相信产品经理的核心是判断力，技术是可以补的工具。</strong></p>
+        <p>我的专业背景不是计算机，但我用 Figma 画原型、Trae 生成 HTML、Coze 搭 Agent、Claude vibe-code 了这个网站。<strong>我相信产品经理的核心是判断力。</strong></p>
       </div>
       <div class="about-sidebar reveal">
         <div class="sidebar-group">
@@ -631,7 +668,15 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
         <div class="project-index">01</div>
         <div class="project-main">
           <div class="project-top">
-            <h3 class="project-title">海外 B2B SaaS 产品增长实习</h3>
+            <svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:20px">
+  <defs><radialGradient id="ig1" cx="38%" cy="32%" r="60%"><stop offset="0%" stop-color="#A78BFA"/><stop offset="100%" stop-color="#5B21B6"/></radialGradient></defs>
+  <rect width="100" height="100" rx="28" fill="url(#ig1)"/>
+  <rect x="14" y="60" width="14" height="28" rx="5" fill="white" opacity="0.9"/>
+  <rect x="34" y="44" width="14" height="44" rx="5" fill="white" opacity="0.9"/>
+  <rect x="54" y="30" width="14" height="58" rx="5" fill="white" opacity="0.9"/>
+  <rect x="74" y="18" width="14" height="70" rx="5" fill="white" opacity="0.9"/>
+  <rect x="14" y="93" width="74" height="3" rx="1.5" fill="white" opacity="0.4"/>
+</svg><h3 class="project-title">海外 B2B SaaS 产品增长实习</h3>
             <div class="project-tags">
               <span class="ptag">增长</span><span class="ptag">数据</span><span class="ptag">AI工具</span>
             </div>
@@ -692,12 +737,22 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
         <div class="project-index">02</div>
         <div class="project-main">
           <div class="project-top">
-            <h3 class="project-title">货代 CRM「客户跟进 + 绩效管理」模块设计</h3>
+            <svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:20px">
+  <defs><radialGradient id="ig2" cx="38%" cy="32%" r="60%"><stop offset="0%" stop-color="#6EE7B7"/><stop offset="100%" stop-color="#059669"/></radialGradient></defs>
+  <rect width="100" height="100" rx="28" fill="url(#ig2)"/>
+  <rect x="22" y="20" width="56" height="68" rx="8" fill="white" opacity="0.92"/>
+  <rect x="30" y="32" width="40" height="4" rx="2" fill="#059669" opacity="0.7"/>
+  <rect x="30" y="42" width="30" height="4" rx="2" fill="#059669" opacity="0.5"/>
+  <rect x="30" y="52" width="35" height="4" rx="2" fill="#059669" opacity="0.5"/>
+  <rect x="30" y="62" width="25" height="4" rx="2" fill="#059669" opacity="0.4"/>
+  <circle cx="68" cy="72" r="14" fill="#059669"/>
+  <path d="M62 72 L66 76 L74 68" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg><h3 class="project-title">货代 CRM「客户跟进 + 绩效管理」模块设计</h3>
             <div class="project-tags">
               <span class="ptag">PRD</span><span class="ptag">Figma</span><span class="ptag">产品设计</span>
             </div>
           </div>
-          <div class="project-subtitle">产品设计面试作业 · 独立完成 · Figma 原型 + HTML 实现</div>
+          <div class="project-subtitle">B2B SaaS 产品课题 · 独立完成 · Figma 原型 + HTML 实现</div>
           <div class="project-preview">原题只要求加一个跟进记录功能，我发现需求里暗藏双类用户，主动扩展为<strong>销售人员 + 管理层双视角设计</strong>，并在数据模型预留 KPI 字段</div>
           <div class="crm-preview-strip" onclick="event.stopPropagation()">
             <a href="https://weixinlan3-sys.github.io/CRM/#" target="_blank" class="crm-strip-thumb"><img src="crm-4.png" alt="CRM主界面"></a>
@@ -766,7 +821,17 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
         <div class="project-index">03</div>
         <div class="project-main">
           <div class="project-top">
-            <h3 class="project-title">海外汽车改装 SaaS · AI 智能客服 Agent</h3>
+            <svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:20px">
+  <defs><radialGradient id="ig3" cx="38%" cy="32%" r="60%"><stop offset="0%" stop-color="#FCA5A5"/><stop offset="100%" stop-color="#DC2626"/></radialGradient></defs>
+  <rect width="100" height="100" rx="28" fill="url(#ig3)"/>
+  <rect x="28" y="30" width="44" height="40" rx="10" fill="white" opacity="0.92"/>
+  <circle cx="40" cy="46" r="5" fill="#DC2626" opacity="0.8"/>
+  <circle cx="60" cy="46" r="5" fill="#DC2626" opacity="0.8"/>
+  <path d="M38 56 Q50 64 62 56" stroke="#DC2626" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <rect x="44" y="18" width="12" height="12" rx="4" fill="white" opacity="0.8"/>
+  <rect x="22" y="72" width="56" height="14" rx="7" fill="white" opacity="0.7"/>
+  <rect x="28" y="76" width="20" height="6" rx="3" fill="#DC2626" opacity="0.5"/>
+</svg><h3 class="project-title">海外汽车改装 SaaS · AI 智能客服 Agent</h3>
             <div class="project-tags">
               <span class="ptag">Agent</span><span class="ptag">RAG</span><span class="ptag">Coze</span>
             </div>
@@ -830,7 +895,18 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
         <div class="project-index">04</div>
         <div class="project-main">
           <div class="project-top">
-            <h3 class="project-title">这个网站本身</h3>
+            <svg width="52" height="52" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;border-radius:20px">
+  <defs><radialGradient id="ig4" cx="38%" cy="32%" r="60%"><stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#D97706"/></radialGradient></defs>
+  <rect width="100" height="100" rx="28" fill="url(#ig4)"/>
+  <rect x="16" y="28" width="68" height="50" rx="8" fill="white" opacity="0.92"/>
+  <rect x="16" y="28" width="68" height="12" rx="8" fill="#D97706" opacity="0.6"/>
+  <circle cx="26" cy="34" r="3" fill="white" opacity="0.8"/>
+  <circle cx="36" cy="34" r="3" fill="white" opacity="0.8"/>
+  <circle cx="46" cy="34" r="3" fill="white" opacity="0.8"/>
+  <path d="M30 52 L24 58 L30 64" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M46 52 L52 58 L46 64" stroke="#D97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="38" y1="50" x2="34" y2="66" stroke="#D97706" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+</svg><h3 class="project-title">这个网站本身</h3>
             <div class="project-tags">
               <span class="ptag">Vibe Coding</span><span class="ptag">Claude</span>
             </div>
@@ -890,7 +966,7 @@ footer p { font-family: var(--mono); font-size: .65rem; color: var(--ink-3); let
             <span class="contact-item-label">微信</span>
             wueiwei0
           </a>
-          <a href="魏新兰-AI产品简历.docx" class="contact-item">
+          <a href="魏新兰-AI产品简历.pdf" download class="contact-item">
             <span class="contact-item-label">简历</span>
             下载 PDF →
           </a>
